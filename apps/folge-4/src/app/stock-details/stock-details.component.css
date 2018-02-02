@@ -1,0 +1,11 @@
+:host {
+  display: block;
+}
+
+h6 {
+  padding-top: 8px;
+}
+
+table td {
+  padding-left: 0;
+}

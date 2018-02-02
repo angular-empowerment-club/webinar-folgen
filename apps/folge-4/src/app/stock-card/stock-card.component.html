@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="card-header">
+    <button
+      class="btn btn-primary badge float-right"
+      [attr.data-badge]="availableDetails"
+      (click)="toggleDetailsViewVisibility()">
+      <i class="icon icon-plus"></i>
+    </button>
+    <div class="card-title h5">
+      {{ stockQuote.symbol | upperOrLowercase:true }}
+      <span class="card-title-addition">
+        {{ stockQuote.last | currency:'EUR' }}
+      </span>
+    </div>
+    <div class="card-subtitle text-gray">
+      {{ stockQuote.company }}
+      <aec-risk-badge [current]="stockQuote.risk"></aec-risk-badge>
+    </div>
+  </div>
+  <div
+    [@detailsVisibility]="detailsVisibility.visibleness"
+    class="card-body">
+    <ng-content></ng-content>
+  </div>
+</div>

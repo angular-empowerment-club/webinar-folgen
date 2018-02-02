@@ -1,0 +1,25 @@
+<div class="card">
+  <div class="card-header">
+    <button
+      class="btn btn-primary badge float-right"
+      [attr.data-badge]="availableDetails"
+      (click)="toggleDetailsViewVisibility()">
+      <i class="icon icon-plus"></i>
+    </button>
+    <div class="card-title h5">
+      {{ stockQuote.symbol }}
+      <span class="card-title-addition">
+        {{ stockQuote.last }}
+      </span>
+    </div>
+    <div class="card-subtitle text-gray">
+      {{ stockQuote.company }}
+    </div>
+  </div>
+  <div class="card-body">
+    <aec-stock-details
+      [hidden]="isDetailsViewHidden"
+      [stockQuoteDetails]="stockQuote.details">
+    </aec-stock-details>
+  </div>
+</div>
