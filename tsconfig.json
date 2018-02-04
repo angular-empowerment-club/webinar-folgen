@@ -11,8 +11,7 @@
     "lib": ["es2017", "dom"],
     "baseUrl": ".",
     "paths": {
-      "@webinar-folgen/*": ["libs/*"],
-      "@utilities/*": ["apps/folge-4/src/app/utilities/*"]
+      "@utilities/*": ["libs/utilities/src/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

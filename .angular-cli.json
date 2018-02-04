@@ -179,6 +179,12 @@
         "dev": "environments/environment.ts",
         "prod": "environments/environment.prod.ts"
       }
+    },
+    {
+      "name": "utilities",
+      "root": "libs/utilities/src",
+      "test": "../../../test.js",
+      "appRoot": ""
     }
   ]
 }

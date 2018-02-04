@@ -21,14 +21,5 @@ export class StockCardComponent {
 
   toggleDetailsViewVisibility() {
     this.detailsVisibility = this.detailsVisibility.next();
-
-    /**
-     * @before
-     * if (this.visibilityState === 'hidden') {
-     *   this.visibilityState = 'shown';
-     * } else {
-     *   this.visibilityState = 'hidden';
-     * }
-     */
   }
 }
