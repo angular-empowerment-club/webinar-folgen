@@ -71,13 +71,13 @@
     "directive-selector": [
       true,
       "attribute",
-      "app",
+      "aec",
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      "app",
+      "aec",
       "kebab-case"
     ],
     "no-output-on-prefix": true,
