@@ -7,22 +7,13 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
     "baseUrl": ".",
     "paths": {
-      "@webinar-folgen/*": [
-        "libs/*"
-      ]
+      "@webinar-folgen/*": ["libs/*"],
+      "@utilities/*": ["apps/folge-4/src/app/utilities/*"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }
