@@ -5,7 +5,6 @@ import { StockQuoteRisk } from '../models';
 @Component({
   selector: 'aec-stock-risk-filter',
   templateUrl: './stock-risk-filter.component.html',
-  styleUrls: ['./stock-risk-filter.component.css']
 })
 export class StockRiskFilterComponent implements OnInit {
   risks = StockQuoteRisk;
