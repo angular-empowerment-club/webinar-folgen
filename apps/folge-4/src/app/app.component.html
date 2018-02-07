@@ -2,6 +2,7 @@
 <aec-stock-card
   [@flyInOut]="'in'"
   [stockQuote]="stock"
+  (remove)="removeStockQuoteFromList($event)"
   *ngFor="let stock of stockQoutes">
     <aec-stock-details [stockQuoteDetails]="stock.details"></aec-stock-details>
     <aec-stock-risk-switcher
