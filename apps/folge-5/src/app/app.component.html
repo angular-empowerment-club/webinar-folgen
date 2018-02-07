@@ -1,0 +1,18 @@
+<h1>Your Stocks</h1>
+<aec-stock-risk-filter (update)="updateRiskWhiteList($event)"></aec-stock-risk-filter>
+
+<aec-stock-search (search)="updateSymbolQuery($event)"></aec-stock-search>
+
+<aec-stock-card
+  [@flyInOut]="'in'"
+  [stockQuote]="stock"
+  (remove)="removeStockQuoteFromList($event)"
+  *ngFor="let stock of stockQoutes
+          | restrictStocks: riskWhiteList
+          | searchSymbol: symbolQuery">
+    <aec-stock-details [stockQuoteDetails]="stock.details"></aec-stock-details>
+    <aec-stock-risk-switcher
+      [current]="stock.risk"
+      (choose)="updateRisk(stock, $event)">
+    </aec-stock-risk-switcher>
+</aec-stock-card>
