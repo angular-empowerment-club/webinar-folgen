@@ -1,8 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import {
-  ElementChangingVisibility,
-  HiddenElement
-} from '@utilities/animations';
+import { ElementChangingVisibility, HiddenElement } from '@utilities/animations';
 
 import { StockQuote } from '../models';
 import { detailsVisibility } from './stock-card.animations';

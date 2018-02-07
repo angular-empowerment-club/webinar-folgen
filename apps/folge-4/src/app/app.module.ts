@@ -9,10 +9,12 @@ import { StockCardComponent } from './stock-card/stock-card.component';
 import { StockDetailsComponent } from './stock-details/stock-details.component';
 import { UpperOrLowercasePipe } from './pipes/upper-or-lowercase.pipe';
 
-import localeDe from '@angular/common/locales/de';
 import { StockRiskSwitcherComponent } from './stock-risk-switcher/stock-risk-switcher.component';
 import { RiskBadgeComponent } from './risk-badge/risk-badge.component';
+import { StockRiskFilterComponent } from './stock-risk-filter/stock-risk-filter.component';
+import { RestrictStocksPipe } from './pipes/restrict-stocks.pipe';
 
+import localeDe from '@angular/common/locales/de';
 registerLocaleData(localeDe);
 
 @NgModule({
@@ -22,7 +24,9 @@ registerLocaleData(localeDe);
     StockDetailsComponent,
     UpperOrLowercasePipe,
     StockRiskSwitcherComponent,
-    RiskBadgeComponent
+    RiskBadgeComponent,
+    StockRiskFilterComponent,
+    RestrictStocksPipe
   ],
   imports: [BrowserModule, BrowserAnimationsModule, FormsModule],
   providers: [{ provide: LOCALE_ID, useValue: 'de' }],
