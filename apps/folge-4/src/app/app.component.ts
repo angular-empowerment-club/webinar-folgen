@@ -16,6 +16,7 @@ import { StockQuote, StockQuoteRisk } from './models';
   ]
 })
 export class AppComponent {
+  symbolQuery: string;
   riskWhiteList: string[];
 
   stockQoutes: StockQuote[] = [
@@ -47,6 +48,10 @@ export class AppComponent {
 
   updateRiskWhiteList(riskWhiteList: string[]) {
     this.riskWhiteList = riskWhiteList;
+  }
+
+  updateSymbolQuery(symbolQuery: string) {
+    this.symbolQuery = symbolQuery;
   }
 
   removeStockQuoteFromList(stockQuote: StockQuote) {

@@ -15,6 +15,8 @@ import { StockRiskFilterComponent } from './stock-risk-filter/stock-risk-filter.
 import { RestrictStocksPipe } from './pipes/restrict-stocks.pipe';
 
 import localeDe from '@angular/common/locales/de';
+import { StockSearchComponent } from './stock-search/stock-search.component';
+import { SearchSymbolPipe } from './pipes/search-symbol.pipe';
 registerLocaleData(localeDe);
 
 @NgModule({
@@ -26,7 +28,9 @@ registerLocaleData(localeDe);
     StockRiskSwitcherComponent,
     RiskBadgeComponent,
     StockRiskFilterComponent,
-    RestrictStocksPipe
+    StockSearchComponent,
+    RestrictStocksPipe,
+    SearchSymbolPipe
   ],
   imports: [BrowserModule, BrowserAnimationsModule, FormsModule],
   providers: [{ provide: LOCALE_ID, useValue: 'de' }],
