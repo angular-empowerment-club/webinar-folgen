@@ -14,14 +14,16 @@ import { StockRiskFilterComponent } from './stock-risk-filter/stock-risk-filter.
 import { StockRiskSwitcherComponent } from './stock-risk-switcher/stock-risk-switcher.component';
 import { StockSearchComponent } from './stock-search/stock-search.component';
 import { StocksComponent } from './stocks.component';
+import { Dependency } from './core/dependency.service';
 
 function stocksFactory() {
-  return () => new Stocks();
+  return (dependency: Dependency) => new Stocks(dependency);
 }
 
 const STOCKS_PROVIDER: Provider = {
   provide: Stocks,
-  useFactory: stocksFactory()
+  useFactory: stocksFactory(),
+  deps: [Dependency]
 };
 
 @NgModule({
@@ -39,6 +41,9 @@ const STOCKS_PROVIDER: Provider = {
     SearchSymbolPipe
   ],
   exports: [StocksComponent],
-  providers: [STOCKS_PROVIDER]
+  providers: [
+    STOCKS_PROVIDER,
+    Dependency
+  ]
 })
 export class StocksModule {}
