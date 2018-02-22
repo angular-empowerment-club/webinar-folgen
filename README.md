@@ -7,7 +7,7 @@ Jeder Webinarfolge ist ein Projekt zugeordnen, das mit der Angular CLI gestartet
 werden kann.
 
 ```shell
-$ ng server -a=folge-n
+$ ng serve -a=folge-n
 ```
 
 Im Verzeichnis `apps/` sind alle Folgen hinteregt.
