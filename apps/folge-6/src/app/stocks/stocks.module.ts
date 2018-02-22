@@ -15,15 +15,11 @@ import { StockRiskSwitcherComponent } from './stock-risk-switcher/stock-risk-swi
 import { StockSearchComponent } from './stock-search/stock-search.component';
 import { StocksComponent } from './stocks.component';
 import { Dependency } from './core/dependency.service';
-
-function stocksFactory() {
-  return (dependency: Dependency) => new Stocks(dependency);
-}
+import { PushStocks } from './core/push-stocks.service';
 
 const STOCKS_PROVIDER: Provider = {
   provide: Stocks,
-  useFactory: stocksFactory(),
-  deps: [Dependency]
+  useClass: Stocks
 };
 
 @NgModule({
@@ -42,8 +38,13 @@ const STOCKS_PROVIDER: Provider = {
   ],
   exports: [StocksComponent],
   providers: [
-    STOCKS_PROVIDER,
-    Dependency
+    // STOCKS_PROVIDER,
+    Dependency,
+    PushStocks,
+    {
+      provide: Stocks,
+      useExisting: PushStocks
+    },
   ]
 })
 export class StocksModule {}

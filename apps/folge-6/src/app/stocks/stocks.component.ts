@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 
 import { Stocks } from './core/stocks.service';
 import { StockQuote, StockQuoteRisk } from './models';
+import { PushStocks } from './core/push-stocks.service';
 
 @Component({
   selector: 'aec-stocks',
@@ -20,7 +21,7 @@ export class StocksComponent {
   riskWhiteList: string[];
   stockQoutes: StockQuote[];
 
-  constructor(private stocks: Stocks) {
+  constructor(private stocks: PushStocks) {
     this.stockQoutes = stocks.all();
   }
 
