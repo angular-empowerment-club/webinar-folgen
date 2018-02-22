@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { Stocks } from './core/stocks.service';
 import { RestrictStocksPipe } from './pipes/restrict-stocks.pipe';
 import { SearchSymbolPipe } from './pipes/search-symbol.pipe';
 import { UpperOrLowercasePipe } from './pipes/upper-or-lowercase.pipe';
@@ -28,8 +29,7 @@ import { StocksComponent } from './stocks.component';
     RestrictStocksPipe,
     SearchSymbolPipe
   ],
-  exports: [
-    StocksComponent
-  ]
+  exports: [StocksComponent],
+  providers: [Stocks]
 })
 export class StocksModule {}
