@@ -1,0 +1,13 @@
+<div [ngSwitch]="current">
+  <div *ngSwitchCase="risks.NotRated" class="chip">
+    <figure class="avatar avatar-sm" data-initial="?" style="background-color: #320aa0;"></figure>
+    Think before you trade
+  </div>
+  <div *ngSwitchCase="risks.High" class="chip">
+    <figure class="avatar avatar-sm" data-initial="!!" style="background-color: #a00a23;"></figure>
+    Be careful
+  </div>
+  <div *ngSwitchDefault class="chip">
+    <figure class="avatar avatar-sm" style="background-color: #088a33;"></figure>
+  </div>
+</div>
