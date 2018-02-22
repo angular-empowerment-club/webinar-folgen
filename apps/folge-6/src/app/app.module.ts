@@ -2,7 +2,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { registerLocaleData } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { LOCALE_ID, NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule, TypeProvider } from '@angular/core';
 
 import { StocksModule } from './stocks/stocks.module';
 
@@ -16,12 +16,14 @@ export function identifiedService(moduleName: string) {
   return () => new UserService(moduleName);
 }
 
+const Alias: TypeProvider = UserService;
+
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, StocksModule],
   providers: [
     { provide: LOCALE_ID, useValue: 'de' },
-    { provide: UserService, useFactory: identifiedService('AppModule') }
+    { provide: Alias, useFactory: identifiedService('AppModule') }
   ],
   bootstrap: [AppComponent]
 })
