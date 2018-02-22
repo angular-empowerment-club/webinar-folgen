@@ -9,12 +9,20 @@ import { StocksModule } from './stocks/stocks.module';
 import { AppComponent } from './app.component';
 
 import localeDe from '@angular/common/locales/de';
+import { UserService } from './user-service.service';
 registerLocaleData(localeDe);
+
+export function identifiedService(moduleName: string) {
+  return () => new UserService(moduleName);
+}
 
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, StocksModule],
-  providers: [{ provide: LOCALE_ID, useValue: 'de' }],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'de' },
+    { provide: UserService, useFactory: identifiedService('AppModule') }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

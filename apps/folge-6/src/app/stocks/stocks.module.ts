@@ -17,11 +17,16 @@ import { StockRiskFilterComponent } from './stock-risk-filter/stock-risk-filter.
 import { StockRiskSwitcherComponent } from './stock-risk-switcher/stock-risk-switcher.component';
 import { StockSearchComponent } from './stock-search/stock-search.component';
 import { StocksComponent } from './stocks.component';
+import { UserService } from '../user-service.service';
 
 const STOCKS_PROVIDER: Provider = {
   provide: Stocks,
   useClass: Stocks
 };
+
+function identifiedService(moduleName: string) {
+  return () => new UserService(moduleName);
+}
 
 @NgModule({
   imports: [CommonModule, BrowserAnimationsModule, FormsModule],
@@ -46,6 +51,10 @@ const STOCKS_PROVIDER: Provider = {
       provide: Stocks,
       useExisting: PushStocks
     },
+    {
+      provide: UserService,
+      useFactory: identifiedService('StocksModule')
+    }
     // Options
   ]
 })

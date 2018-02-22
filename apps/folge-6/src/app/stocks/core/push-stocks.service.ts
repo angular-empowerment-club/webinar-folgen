@@ -4,7 +4,11 @@ import { OPTIONS } from './app-options';
 
 @Injectable()
 export class PushStocks {
-  constructor(@Optional() @Inject(OPTIONS) options) {
+  constructor(
+    @Optional()
+    @Inject(OPTIONS)
+    options
+  ) {
     console.log(options);
   }
 
