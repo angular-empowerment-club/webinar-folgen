@@ -1,10 +1,10 @@
-import { Injectable, Inject } from '@angular/core';
+import { Injectable, Inject, Optional } from '@angular/core';
 import { StockQuote } from '../models';
 import { OPTIONS } from './app-options';
 
 @Injectable()
 export class PushStocks {
-  constructor(@Inject(OPTIONS) options) {
+  constructor(@Optional() @Inject(OPTIONS) options) {
     console.log(options);
   }
 

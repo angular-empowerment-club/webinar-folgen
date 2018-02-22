@@ -46,7 +46,7 @@ const STOCKS_PROVIDER: Provider = {
       provide: Stocks,
       useExisting: PushStocks
     },
-    Options
+    // Options
   ]
 })
 export class StocksModule {}
