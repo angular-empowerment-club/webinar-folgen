@@ -3,6 +3,9 @@ import { NgModule, Provider } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { Dependency } from './core/dependency.service';
+import { AppOptions, OPTIONS } from './core/options';
+import { PushStocks } from './core/push-stocks.service';
 import { Stocks } from './core/stocks.service';
 import { RestrictStocksPipe } from './pipes/restrict-stocks.pipe';
 import { SearchSymbolPipe } from './pipes/search-symbol.pipe';
@@ -14,8 +17,6 @@ import { StockRiskFilterComponent } from './stock-risk-filter/stock-risk-filter.
 import { StockRiskSwitcherComponent } from './stock-risk-switcher/stock-risk-switcher.component';
 import { StockSearchComponent } from './stock-search/stock-search.component';
 import { StocksComponent } from './stocks.component';
-import { Dependency } from './core/dependency.service';
-import { PushStocks } from './core/push-stocks.service';
 
 const STOCKS_PROVIDER: Provider = {
   provide: Stocks,
@@ -45,6 +46,10 @@ const STOCKS_PROVIDER: Provider = {
       provide: Stocks,
       useExisting: PushStocks
     },
+    {
+      provide: OPTIONS,
+      useValue: new AppOptions()
+    }
   ]
 })
 export class StocksModule {}
