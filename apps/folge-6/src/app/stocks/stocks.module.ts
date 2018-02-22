@@ -17,7 +17,7 @@ import { StocksComponent } from './stocks.component';
 
 const STOCKS_PROVIDER: Provider = {
   provide: Stocks,
-  useClass: Stocks
+  useValue: new Stocks()
 };
 
 @NgModule({
