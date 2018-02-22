@@ -15,9 +15,13 @@ import { StockRiskSwitcherComponent } from './stock-risk-switcher/stock-risk-swi
 import { StockSearchComponent } from './stock-search/stock-search.component';
 import { StocksComponent } from './stocks.component';
 
+function stocksFactory() {
+  return () => new Stocks();
+}
+
 const STOCKS_PROVIDER: Provider = {
   provide: Stocks,
-  useValue: new Stocks()
+  useFactory: stocksFactory()
 };
 
 @NgModule({
