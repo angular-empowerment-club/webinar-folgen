@@ -3,8 +3,8 @@ import { NgModule, Provider } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { Options } from './core/app-options';
 import { Dependency } from './core/dependency.service';
-import { AppOptions, OPTIONS } from './core/options';
 import { PushStocks } from './core/push-stocks.service';
 import { Stocks } from './core/stocks.service';
 import { RestrictStocksPipe } from './pipes/restrict-stocks.pipe';
@@ -46,10 +46,7 @@ const STOCKS_PROVIDER: Provider = {
       provide: Stocks,
       useExisting: PushStocks
     },
-    {
-      provide: OPTIONS,
-      useValue: new AppOptions()
-    }
+    Options
   ]
 })
 export class StocksModule {}
