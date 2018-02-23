@@ -20,10 +20,10 @@ function identifiedService(moduleName: string) {
       transition('* => void', [animate(100, style({ opacity: 1, transform: 'translateX(100%)' }))])
     ])
   ],
-  providers: [{
-    provide: UserService,
-    useFactory: identifiedService('StocksComponent')
-  }]
+  // providers: [{
+  //   provide: UserService,
+  //   useFactory: identifiedService('StocksComponent')
+  // }]
 })
 export class StocksComponent {
   symbolQuery: string;
