@@ -1,12 +1,9 @@
 import { Injectable } from '@angular/core';
 
 import { StockQuoteRisk } from '../models';
-import { Dependency } from './dependency.service';
 
 @Injectable()
 export class Stocks {
-  constructor(dependency: Dependency) {}
-
   all() {
     return [
       {

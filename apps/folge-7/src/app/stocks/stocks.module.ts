@@ -3,9 +3,6 @@ import { NgModule, Provider } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { Options } from './core/app-options';
-import { Dependency } from './core/dependency.service';
-import { PushStocks } from './core/push-stocks.service';
 import { Stocks } from './core/stocks.service';
 import { RestrictStocksPipe } from './pipes/restrict-stocks.pipe';
 import { SearchSymbolPipe } from './pipes/search-symbol.pipe';
@@ -17,16 +14,11 @@ import { StockRiskFilterComponent } from './stock-risk-filter/stock-risk-filter.
 import { StockRiskSwitcherComponent } from './stock-risk-switcher/stock-risk-switcher.component';
 import { StockSearchComponent } from './stock-search/stock-search.component';
 import { StocksComponent } from './stocks.component';
-import { UserService } from '../user-service.service';
 
 const STOCKS_PROVIDER: Provider = {
   provide: Stocks,
   useClass: Stocks
 };
-
-function identifiedService(moduleName: string) {
-  return () => new UserService(moduleName);
-}
 
 @NgModule({
   imports: [CommonModule, BrowserAnimationsModule, FormsModule],
@@ -43,19 +35,6 @@ function identifiedService(moduleName: string) {
     SearchSymbolPipe
   ],
   exports: [StocksComponent],
-  providers: [
-    // STOCKS_PROVIDER,
-    Dependency,
-    PushStocks,
-    {
-      provide: Stocks,
-      useExisting: PushStocks
-    },
-    {
-      provide: UserService,
-      useFactory: identifiedService('StocksModule')
-    }
-    // Options
-  ]
+  providers: [STOCKS_PROVIDER]
 })
 export class StocksModule {}
