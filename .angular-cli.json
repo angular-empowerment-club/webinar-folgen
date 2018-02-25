@@ -233,6 +233,32 @@
       }
     },
     {
+      "name": "folge-7",
+      "root": "apps/folge-7/src",
+      "outDir": "dist/apps/folge-7",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "../../../test.js",
+      "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "../../../tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "../../../node_modules/spectre.css/dist/spectre.css",
+        "../../../node_modules/spectre.css/dist/spectre-icons.css"
+      ],
+      "scripts": [],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    },
+    {
       "name": "utilities",
       "root": "libs/utilities/src",
       "test": "../../../test.js",
