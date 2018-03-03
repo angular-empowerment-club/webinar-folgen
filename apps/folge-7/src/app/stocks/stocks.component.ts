@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Stocks } from './core/stocks.service';
 import { StockQuote, StockQuoteRisk } from './models';
@@ -9,13 +9,19 @@ import { fadeStockQuotes } from './stocks.animations';
   templateUrl: './stocks.component.html',
   animations: [fadeStockQuotes]
 })
-export class StocksComponent {
+export class StocksComponent implements OnInit {
   symbolQuery: string;
   riskWhiteList: string[];
   stockQoutes: StockQuote[];
 
   constructor(private stocks: Stocks) {
     this.stockQoutes = stocks.all();
+  }
+
+  ngOnInit() {
+    this.stocks
+      .getBySymbols('msft,tsla,aapl,fb')
+      .subscribe(stockQuotes => this.stockQoutes = stockQuotes);
   }
 
   updateRisk(stock: StockQuote, risk: StockQuoteRisk) {
