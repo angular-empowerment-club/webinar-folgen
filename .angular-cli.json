@@ -3,7 +3,7 @@
   "project": {
     "name": "webinar-folgen",
     "npmScope": "webinar-folgen",
-    "latestMigration": "20180121-update-angular"
+    "latestMigration": "20180227-cleanup-scripts"
   },
   "e2e": {
     "protractor": {

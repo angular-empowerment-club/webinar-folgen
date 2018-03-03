@@ -14,9 +14,7 @@ export class StocksComponent implements OnInit {
   riskWhiteList: string[];
   stockQoutes: StockQuote[];
 
-  constructor(private stocks: Stocks) {
-    this.stockQoutes = stocks.all();
-  }
+  constructor(private stocks: Stocks) {}
 
   ngOnInit() {
     this.stocks

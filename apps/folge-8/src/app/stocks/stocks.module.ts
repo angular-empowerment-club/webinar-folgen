@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { NgModule, Provider } from '@angular/core';
+import { NgModule, Provider, InjectionToken } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -17,6 +17,8 @@ import { StockRiskSwitcherComponent } from './stock-risk-switcher/stock-risk-swi
 import { StockSearchComponent } from './stock-search/stock-search.component';
 import { StocksComponent } from './stocks.component';
 import { AttachAlphavantageApiKey } from './core/interceptors/attach-alphavantage-api-key.interceptor';
+import { environment } from '../../environments/environment';
+import { ALPHAVANTAGE_API_KEY } from './core/app-options';
 
 const STOCKS_PROVIDER: Provider = {
   provide: Stocks,
@@ -45,6 +47,10 @@ const STOCKS_PROVIDER: Provider = {
       provide: HTTP_INTERCEPTORS,
       useClass: AttachAlphavantageApiKey,
       multi: true
+    },
+    {
+      provide: ALPHAVANTAGE_API_KEY,
+      useValue: environment.alphavantageApiKey
     }
   ]
 })
