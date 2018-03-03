@@ -1,0 +1,10 @@
+:host {
+  display: block;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.card-title-addition {
+  color: #3D9400;
+  padding-left: 8px;
+}
