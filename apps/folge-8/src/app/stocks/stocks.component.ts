@@ -14,10 +14,10 @@ export class StocksComponent implements OnInit {
   riskWhiteList: string[];
   stockQoutes: StockQuote[];
 
-  constructor(private stocks: Stocks) {}
+  constructor(private _stocks: Stocks) {}
 
   ngOnInit() {
-    this.stocks
+    this._stocks
       .loadSymbolsFromAlphavantage('msft,tsla,aapl,fb')
       .subscribe(stockQuotes => this.stockQoutes = stockQuotes);
   }
@@ -32,6 +32,10 @@ export class StocksComponent implements OnInit {
 
   updateSymbolQuery(symbolQuery: string) {
     this.symbolQuery = symbolQuery;
+  }
+
+  addStockQuoteToWatchList(stockQuote: StockQuote) {
+    this._stocks.watch(stockQuote).subscribe();
   }
 
   removeStockQuoteFromList(stockQuote: StockQuote) {

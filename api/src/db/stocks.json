@@ -4,5 +4,15 @@
     },
     "msft": {
         "symbol": "msft"
+    },
+    "MSFT": {
+        "symbol": "MSFT",
+        "last": 93.36,
+        "company": "",
+        "details": {
+            "nextEarnings": "2018-03-06T20:01:34.377Z",
+            "lastUpdateOn": "2018-03-06T14:01:33.000Z"
+        },
+        "risk": 0
     }
 }

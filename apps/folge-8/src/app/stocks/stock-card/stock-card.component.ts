@@ -11,10 +11,15 @@ import { detailsVisibility } from './stock-card.animations';
 })
 export class StockCardComponent {
   @Output() remove = new EventEmitter<StockQuote>();
+  @Output() watch = new EventEmitter<StockQuote>();
   @Input() stockQuote: StockQuote;
 
   get availableDetails() {
     return Object.keys(this.stockQuote.details).length;
+  }
+
+  emitWatch(stockQuote: StockQuote) {
+    this.watch.emit(stockQuote);
   }
 
   emitRemove() {
