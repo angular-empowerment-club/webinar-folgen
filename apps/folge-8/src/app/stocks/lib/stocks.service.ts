@@ -11,9 +11,9 @@ export class Stocks {
   constructor(
     private _alphavantage: AlphavantageStocks,
     private _mapper: StockQuoteBatchMap
-  ) { }
+  ) {}
 
-  getBySymbols(symbols: string): Observable<StockQuote[]> {
+  loadSymbolsFromAlphavantage(symbols: string): Observable<StockQuote[]> {
     return this._alphavantage
       .getBySymbols(symbols)
       .pipe(map(stocksFromApi => this._mapper.execute(stocksFromApi)));

@@ -18,7 +18,7 @@ export class StocksComponent implements OnInit {
 
   ngOnInit() {
     this.stocks
-      .getBySymbols('msft,tsla,aapl,fb')
+      .loadSymbolsFromAlphavantage('msft,tsla,aapl,fb')
       .subscribe(stockQuotes => this.stockQoutes = stockQuotes);
   }
 
