@@ -1,0 +1,21 @@
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { map } from 'rxjs/operators';
+
+import { AlphavantageStocks } from '../../core/';
+import { StockQuote } from '../models';
+import { StockQuoteBatchMap } from './stock-quote-batch.map';
+
+@Injectable()
+export class Stocks {
+  constructor(
+    private _alphavantage: AlphavantageStocks,
+    private _mapper: StockQuoteBatchMap
+  ) { }
+
+  getBySymbols(symbols: string): Observable<StockQuote[]> {
+    return this._alphavantage
+      .getBySymbols(symbols)
+      .pipe(map(stocksFromApi => this._mapper.execute(stocksFromApi)));
+  }
+}

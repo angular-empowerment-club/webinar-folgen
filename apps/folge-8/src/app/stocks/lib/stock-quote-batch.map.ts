@@ -1,7 +1,10 @@
-import { StockQuoteBatchFromApi } from "./stock-quote-batch-from-api";
-import { StockQuote, StockQuoteRisk } from "../../models";
-import { StockQuoteFromApi } from "./stock-quote-from-api";
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
+
+import {
+  StockQuoteBatchFromApi,
+  StockQuoteFromApi
+} from '../../core/alphavantage/api';
+import { StockQuote, StockQuoteRisk } from '../models';
 
 @Injectable()
 export class StockQuoteBatchMap {

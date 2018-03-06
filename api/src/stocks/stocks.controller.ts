@@ -8,7 +8,7 @@ import {
   Post,
   UsePipes
 } from '@nestjs/common';
-import { ApiResponse, ApiUseTags } from '@nestjs/swagger';
+import { ApiResponse, ApiUseTags, ApiImplicitBody, ApiOperation } from '@nestjs/swagger';
 
 import { DbContext } from '../core';
 import { StockQuote } from '../models';
@@ -19,7 +19,7 @@ import { StocksPipe } from './stocks.pipe';
 export class StocksController {
   constructor(
     @Inject('StocksContext') private _context: DbContext<StockQuote>
-  ) {}
+  ) { }
 
   @Get()
   @ApiResponse({
@@ -31,10 +31,10 @@ export class StocksController {
   }
 
   @Post()
-  @UsePipes(new StocksPipe())
+  @ApiImplicitBody({ name: "stockQuote", required: true, type: StockQuote })
   @HttpCode(HttpStatus.CREATED)
   @ApiResponse({ status: 201, description: 'Create or Update a single stock' })
-  upsert(@Body() stockQuote: StockQuote) {
+  upsert(@Body(new StocksPipe()) stockQuote: StockQuote) {
     this._context.upsert(stockQuote);
   }
 }

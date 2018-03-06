@@ -1,11 +1,7 @@
 <div class="card">
   <div class="card-header">
     <div class="float-right">
-      <button
-        class="btn btn-default"
-        (click)="emitRemove()">
-        <i class="icon icon-delete"></i>
-      </button>
+
     </div>
     <div class="card-title h5">
       {{ stockQuote.symbol | upperOrLowercase:true }}
@@ -21,17 +17,16 @@
       <aec-risk-badge [current]="stockQuote.risk"></aec-risk-badge>
   </div>
   <div class="card-footer">
-    <button
-      class="btn btn-link badge"
-      [attr.data-badge]="availableDetails"
-      (click)="toggleDetailsViewVisibility()">
-      Details
-    </button>
+    <div class="btn-group btn-group-block">
+      <button
+      class="btn btn-default"
+      (click)="emitRemove()">
+        <i class="icon icon-plus"></i>
+      </button>
+    </div>
   </div>
 
-  <div
-    [@detailsVisibility]="detailsVisibility.visibleness"
-    class="card-body">
+  <div class="card-body">
     <ng-content></ng-content>
   </div>
 </div>

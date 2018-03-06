@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Stocks } from './core/stocks.service';
+import { Stocks } from './lib/stocks.service';
 import { StockQuote, StockQuoteRisk } from './models';
 import { fadeStockQuotes } from './stocks.animations';
 
