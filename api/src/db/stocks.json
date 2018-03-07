@@ -1,17 +1,21 @@
 {
-    "aapl": {
-        "symbol": "aapl"
-    },
-    "msft": {
-        "symbol": "msft"
-    },
     "MSFT": {
         "symbol": "MSFT",
-        "last": 93.36,
+        "last": 93.76,
         "company": "",
         "details": {
-            "nextEarnings": "2018-03-06T20:01:34.377Z",
-            "lastUpdateOn": "2018-03-06T14:01:33.000Z"
+            "nextEarnings": "2018-03-07T20:36:20.411Z",
+            "lastUpdateOn": "2018-03-07T14:36:18.000Z"
+        },
+        "risk": 2
+    },
+    "TSLA": {
+        "symbol": "TSLA",
+        "last": 330.88,
+        "company": "",
+        "details": {
+            "nextEarnings": "2018-03-07T20:35:24.606Z",
+            "lastUpdateOn": "2018-03-07T14:35:22.000Z"
         },
         "risk": 0
     }

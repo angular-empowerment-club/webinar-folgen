@@ -23,7 +23,11 @@ export class Stocks {
       .pipe(map(stocksFromApi => this._mapper.execute(stocksFromApi)));
   }
 
-  watch(stockQuote: StockQuote) {
+  watch(stockQuote: StockQuote): Observable<any> {
     return this._http.post(this._apiRoot, stockQuote);
+  }
+
+  update(stockQuote: StockQuote): Observable<any> {
+    return this._http.put(this._apiRoot, stockQuote);
   }
 }

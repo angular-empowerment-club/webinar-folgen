@@ -22,8 +22,9 @@ export class StocksComponent implements OnInit {
       .subscribe(stockQuotes => this.stockQoutes = stockQuotes);
   }
 
-  updateRisk(stock: StockQuote, risk: StockQuoteRisk) {
-    stock.risk = risk;
+  updateRisk(stockQuote: StockQuote, risk: StockQuoteRisk) {
+    stockQuote.risk = risk;
+    this._stocks.update(stockQuote).subscribe();
   }
 
   updateRiskWhiteList(riskWhiteList: string[]) {

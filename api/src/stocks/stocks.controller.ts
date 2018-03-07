@@ -6,7 +6,8 @@ import {
   HttpStatus,
   Inject,
   Post,
-  UsePipes
+  UsePipes,
+  Put
 } from '@nestjs/common';
 import { ApiResponse, ApiUseTags, ApiImplicitBody, ApiOperation } from '@nestjs/swagger';
 
@@ -34,7 +35,14 @@ export class StocksController {
   @ApiImplicitBody({ name: "stockQuote", required: true, type: StockQuote })
   @HttpCode(HttpStatus.CREATED)
   @ApiResponse({ status: 201, description: 'Create or Update a single stock' })
-  upsert(@Body(new StocksPipe()) stockQuote: StockQuote) {
+  insert(@Body(new StocksPipe()) stockQuote: StockQuote) {
+    this._context.upsert(stockQuote);
+  }
+
+  @Put()
+  @HttpCode(HttpStatus.ACCEPTED)
+  @ApiResponse({ status: 202, description: 'Updates data of a stock' })
+  update(@Body(new StocksPipe()) stockQuote: StockQuote) {
     this._context.upsert(stockQuote);
   }
 }
