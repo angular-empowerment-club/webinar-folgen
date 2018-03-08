@@ -1,5 +1,6 @@
 import JsonDb = require('node-json-db');
-import { Entity } from './models/entity';
+
+import { Entity } from '../models/entity';
 
 export class DbContext<T extends Entity> {
   private _db: JsonDb;

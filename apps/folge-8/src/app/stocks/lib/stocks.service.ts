@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 
 import { AlphavantageStocks } from '../../core/';
 import { StockQuote } from '../models';
@@ -29,5 +29,18 @@ export class Stocks {
 
   update(stockQuote: StockQuote): Observable<any> {
     return this._http.put(this._apiRoot, stockQuote);
+  }
+
+  getSingle(symbol: string): Observable<boolean> {
+    return this._http
+      .get<boolean>(`${this._apiRoot}/${symbol}`, { observe: 'response' })
+      .pipe(
+        tap(response => {
+          if (response.status === 204) {
+            throw new Error(`No stock quote was found (Symbol: ${symbol})`);
+          }
+        }),
+        map(response => response.body)
+      )
   }
 }
