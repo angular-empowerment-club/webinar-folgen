@@ -54,10 +54,11 @@ export class StocksController {
   }
 
   @Post()
+  @UsePipes(new StocksPipe())
   @ApiImplicitBody({ name: "stockQuote", required: true, type: StockQuote })
   @HttpCode(HttpStatus.CREATED)
   @ApiResponse({ status: 201, description: 'Create or Update a single stock' })
-  insert(@Body(new StocksPipe()) stockQuote: StockQuote) {
+  insert(@Body() stockQuote: StockQuote) {
     this._context.upsert(stockQuote);
   }
 
