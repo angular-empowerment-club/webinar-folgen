@@ -11,6 +11,7 @@ import { ModalComponent } from './modal/modal.component';
     MatButtonModule,
     MatCardModule
   ],
-  declarations: [ModalComponent]
+  declarations: [ModalComponent],
+  entryComponents: [ModalComponent],
 })
 export class LibModule { }
