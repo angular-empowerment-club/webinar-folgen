@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ModalMessage } from './modal-message';
 
 @Component({
   selector: 'aec-modal',
@@ -6,9 +7,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent {
-  @Input() title: string;
-  @Input() message: string;
-  @Input() color = 'basic';
+  @Input() message: ModalMessage;
 
   @Output() close = new EventEmitter();
 }

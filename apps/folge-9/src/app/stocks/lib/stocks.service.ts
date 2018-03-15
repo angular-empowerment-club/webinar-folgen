@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { map, tap } from 'rxjs/operators';
+import { map, tap, catchError } from 'rxjs/operators';
+import { of } from 'rxjs/observable/of';
 
 import { AlphavantageStocks } from '../../core/';
 import { StockQuote } from '../models';
@@ -29,6 +30,12 @@ export class Stocks {
 
   update(stockQuote: StockQuote): Observable<any> {
     return this._http.put(this._apiRoot, stockQuote);
+    // .pipe(
+      // catchError((err => {
+      //   console.info('ERROR', err);
+      //   return of();
+      // })
+    // );
   }
 
   getSingle(symbol: string): Observable<boolean> {
@@ -41,6 +48,6 @@ export class Stocks {
           }
         }),
         map(response => response.body)
-      )
+      );
   }
 }

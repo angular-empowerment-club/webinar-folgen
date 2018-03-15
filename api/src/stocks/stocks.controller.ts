@@ -66,6 +66,7 @@ export class StocksController {
   @HttpCode(HttpStatus.ACCEPTED)
   @ApiResponse({ status: 202, description: 'Updates data of a stock' })
   update(@Body(new StocksPipe()) stockQuote: StockQuote) {
+    throw new Error('WUAAAAH');
     this._context.upsert(stockQuote);
   }
 }

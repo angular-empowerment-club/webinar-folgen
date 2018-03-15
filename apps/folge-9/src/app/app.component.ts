@@ -1,5 +1,7 @@
-import { Component, ComponentFactoryResolver, ViewContainerRef, ComponentRef } from '@angular/core';
+import { Component, ComponentFactoryResolver, ViewContainerRef, ComponentRef, ChangeDetectorRef } from '@angular/core';
 import { ModalComponent } from './lib/modal/modal.component';
+import { HostElementProvider } from './lib/host-element/host-element.provider';
+import { ModalCleanser } from './lib/modal/modal-cleanser';
 
 @Component({
   selector: 'aec-root',
@@ -7,21 +9,13 @@ import { ModalComponent } from './lib/modal/modal.component';
   styles: ['a { cursor: pointer; display: inline-block; text-align: center; padding: 8px; width: 100%; }']
 })
 export class AppComponent {
-  private _modal: ComponentRef<ModalComponent>;
-
   constructor(
-    private _root: ViewContainerRef,
-    private _resolver: ComponentFactoryResolver
-  ) {}
-
-  open() {
-    const modalFactory = this._resolver.resolveComponentFactory(ModalComponent);
-    this._modal = this._root.createComponent(modalFactory);
-
-    this._modal.instance.title = 'Hilfe';
-    this._modal.instance.message = 'API liefert keine Daten mehr';
-    this._modal.instance.color = 'accent';
-
-    this._modal.instance.close.subscribe(() => this._modal.destroy(), () => {}, () => console.log('COMPLETED'));
+    hostElement: ViewContainerRef,
+    changeDetector: ChangeDetectorRef,
+    hostElementProvider: HostElementProvider,
+    cleanser: ModalCleanser
+  ) {
+    hostElementProvider.provide(hostElement);
+    cleanser.cleanUpRequests().subscribe(() => changeDetector.detectChanges());
   }
 }

@@ -3,13 +3,13 @@
 
 <div class="closable message-dialog">
   <mat-card>
-    <mat-card-title>{{ title }}</mat-card-title>
-    <mat-card-content>{{ message }}</mat-card-content>
+    <mat-card-title>{{ message.title }}</mat-card-title>
+    <mat-card-content>{{ message.message }}</mat-card-content>
     <mat-card-content>
       <button
         (click)="close.emit()"
         mat-raised-button
-        [color]="color">
+        [color]="message.color">
         Got it!
       </button>
     </mat-card-content>
