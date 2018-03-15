@@ -301,7 +301,8 @@
       "prefix": "app",
       "styles": [
         "../../../node_modules/spectre.css/dist/spectre.css",
-        "../../../node_modules/spectre.css/dist/spectre-icons.css"
+        "../../../node_modules/spectre.css/dist/spectre-icons.css",
+        "./styles.scss"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
