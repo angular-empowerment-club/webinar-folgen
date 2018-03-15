@@ -1,0 +1,9 @@
+<div class="btn-group btn-group-block">
+  <button
+    *ngFor="let key of riskKeys"
+    (click)="updateActiveRisks(key)"
+    [class.active]="isRiskActive(key)"
+    class="btn">
+    {{ risks[key] }}
+  </button>
+</div>

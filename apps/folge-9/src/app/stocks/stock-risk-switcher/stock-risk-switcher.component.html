@@ -1,0 +1,19 @@
+<h6>WHICH RISK DO YOU EXPECT?</h6>
+<div class="form-group">
+  <label class="form-radio">
+    <input type="radio" [name]="uniqueName" [value]="risks.NotRated" [ngModel]="current" (ngModelChange)="choose.emit(risks.NotRated)">
+    <i class="form-icon"></i>Not Rated
+  </label>
+  <label class="form-radio">
+    <input type="radio" [name]="uniqueName" [value]="risks.Low" [ngModel]="current" (ngModelChange)="choose.emit(risks.Low)">
+    <i class="form-icon"></i>Low
+  </label>
+  <label class="form-radio">
+    <input type="radio" [name]="uniqueName" [value]="risks.Medium" [ngModel]="current" (ngModelChange)="choose.emit(risks.Medium)">
+    <i class="form-icon"></i>Medium
+  </label>
+  <label class="form-radio">
+    <input type="radio" [name]="uniqueName" [value]="risks.High" [ngModel]="current" (ngModelChange)="choose.emit(risks.High)">
+    <i class="form-icon"></i>High
+  </label>
+</div>
