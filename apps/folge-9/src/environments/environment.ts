@@ -1,4 +1,4 @@
-import { alphavantageApiKey } from "./environment.secret";
+import { alphavantageApiKey } from './environment.secret';
 
 // The file contents for the current environment will overwrite these during build.
 // The build system defaults to the dev environment which uses `environment.ts`, but if you do
