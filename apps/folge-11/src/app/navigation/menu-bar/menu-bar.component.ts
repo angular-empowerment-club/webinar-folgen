@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'aec-menu-bar',
@@ -7,4 +7,9 @@ import { Component, Input } from '@angular/core';
 })
 export class MenuBarComponent {
   @Input() title: string;
+  @Output() menuClick = new EventEmitter<void>();
+
+  emitMenuClick() {
+    this.menuClick.emit();
+  }
 }

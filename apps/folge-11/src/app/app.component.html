@@ -1,2 +1,6 @@
-<aec-menu-bar title="Your Stocks"></aec-menu-bar>
-<aec-stocks></aec-stocks>
+<aec-one-column-layout #layout>
+  <aec-menu-bar title="Your Stocks" (menuClick)="layout.toggleSidenav()"></aec-menu-bar>
+  <main>
+    <aec-stocks></aec-stocks>
+  </main>
+</aec-one-column-layout>

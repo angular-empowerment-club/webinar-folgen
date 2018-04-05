@@ -1,4 +1,4 @@
-import { Component, ComponentFactoryResolver, ViewContainerRef, ComponentRef, ChangeDetectorRef } from '@angular/core';
+import { Component, ComponentFactoryResolver, ViewContainerRef, ComponentRef, ChangeDetectorRef, ViewChild } from '@angular/core';
 import { ModalComponent } from './lib/modal/modal.component';
 import { HostElementProvider } from './lib/host-element/host-element.provider';
 import { ModalCleanser } from './lib/modal/modal-cleanser';

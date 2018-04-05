@@ -1,13 +1,13 @@
 {
     "MSFT": {
         "symbol": "MSFT",
-        "last": 92.27,
+        "last": 0,
         "company": "",
         "details": {
-            "nextEarnings": "2018-04-05T09:18:43.947Z",
-            "lastUpdateOn": "2018-04-04T14:56:02.000Z"
+            "nextEarnings": "2018-04-05T11:24:46.903Z",
+            "lastUpdateOn": "1969-12-31T18:00:00.000Z"
         },
-        "risk": 0
+        "risk": 1
     },
     "TSLA": {
         "symbol": "TSLA",
