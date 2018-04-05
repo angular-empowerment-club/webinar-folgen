@@ -11,6 +11,9 @@
 # dependencies
 /node_modules
 
+# yarn
+yarn-error.log
+
 # IDEs and editors
 /.idea
 .project
