@@ -7,6 +7,8 @@ export class AppErrorHandler implements ErrorHandler {
   constructor(private _modal: Modal, private _cleanser: ModalCleanser) {}
 
   handleError(error) {
+    console.error(error);
+
     this._modal
       .open({
         title: 'Global Error',
