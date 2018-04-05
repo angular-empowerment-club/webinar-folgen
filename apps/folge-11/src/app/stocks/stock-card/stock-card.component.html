@@ -1,0 +1,32 @@
+<div class="card">
+  <div class="card-header">
+    <div class="float-right">
+
+    </div>
+    <div class="card-title h5">
+      {{ stockQuote.symbol | upperOrLowercase:true }}
+      <span class="card-title-addition">
+        {{ stockQuote.last | currency:'EUR' }}
+      </span>
+    </div>
+    <div class="card-subtitle text-gray">
+      {{ stockQuote.company }}
+    </div>
+  </div>
+  <div class="card-body">
+      <aec-risk-badge [current]="stockQuote.risk"></aec-risk-badge>
+  </div>
+  <div class="card-footer">
+    <div class="btn-group btn-group-block">
+      <button
+      class="btn btn-default"
+      (click)="emitWatch(stockQuote)">
+        <i class="icon icon-plus"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <ng-content></ng-content>
+  </div>
+</div>
