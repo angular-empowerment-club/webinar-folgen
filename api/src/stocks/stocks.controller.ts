@@ -46,8 +46,10 @@ export class StocksController {
     description: 'If no stock quote was found'
   })
   single(@Param('symbol') symbol: string, @Res() res: Response) {
+    symbol = symbol.toUpperCase();
+
     try {
-      return this._context.getSingle(symbol);
+      return res.status(200).send(this._context.getSingle(symbol));
     } catch {
       return res.status(HttpStatus.NO_CONTENT).send();
     }
