@@ -8,8 +8,10 @@ import { MatSidenav } from '@angular/material';
 })
 export class OneColumnLayoutComponent {
   @ViewChild(MatSidenav) private _sidenav: MatSidenav;
+  @ViewChild('container') private container: HTMLDivElement;
 
   toggleSidenav() {
+    console.log(this.container);
     this._sidenav.toggle();
   }
 }

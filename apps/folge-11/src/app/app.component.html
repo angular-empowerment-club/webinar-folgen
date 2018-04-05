@@ -1,6 +1,6 @@
 <aec-one-column-layout #layout>
   <aec-menu-bar title="Your Stocks" (menuClick)="layout.toggleSidenav()"></aec-menu-bar>
   <main>
-    <aec-stocks></aec-stocks>
+    <router-outlet></router-outlet>
   </main>
 </aec-one-column-layout>

@@ -38,9 +38,9 @@ export class Stocks {
     // );
   }
 
-  getSingle(symbol: string): Observable<boolean> {
+  getSingle(symbol: string): Observable<StockQuote> {
     return this._http
-      .get<boolean>(`${this._apiRoot}/${symbol}`, { observe: 'response' })
+      .get<StockQuote>(`${this._apiRoot}/${symbol}`, { observe: 'response' })
       .pipe(
         tap(response => {
           if (response.status === 204) {

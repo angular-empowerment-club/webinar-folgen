@@ -3,12 +3,13 @@ import { NgModule } from '@angular/core';
 import { MatButtonModule, MatIconModule, MatSidenavModule, MatToolbarModule, MatListModule } from '@angular/material';
 
 import { MenuBarComponent } from './menu-bar/menu-bar.component';
-import { MainComponent } from './main/main.component';
 import { OneColumnLayoutComponent } from './one-column-layout/one-column-layout.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
+    RouterModule,
 
     MatButtonModule,
     MatIconModule,
@@ -16,7 +17,7 @@ import { OneColumnLayoutComponent } from './one-column-layout/one-column-layout.
     MatSidenavModule,
     MatToolbarModule
   ],
-  declarations: [MenuBarComponent, MainComponent, OneColumnLayoutComponent],
-  exports: [MenuBarComponent, MainComponent, OneColumnLayoutComponent]
+  declarations: [MenuBarComponent, OneColumnLayoutComponent],
+  exports: [MenuBarComponent, OneColumnLayoutComponent]
 })
 export class NavigationModule { }

@@ -1,9 +1,20 @@
-<div class="example-container">
+<div class="example-container" #container>
   <ng-content select="aec-menu-bar"></ng-content>
   <mat-sidenav-container class="example-sidenav-container">
     <mat-sidenav>
       <mat-nav-list>
-        <a mat-list-item routerLink="."> hi</a>
+        <a mat-list-item href="">
+          <mat-icon>monetization_on</mat-icon>
+          <span class="link-text">Stocks</span>
+        </a>
+        <a mat-list-item routerLink="legal">
+          <mat-icon>info</mat-icon>
+          <span class="link-text">About</span>
+        </a>
+        <a mat-list-item href="">
+          <mat-icon>feedback</mat-icon>
+          <span class="link-text">Feedback</span>
+        </a>
       </mat-nav-list>
     </mat-sidenav>
 

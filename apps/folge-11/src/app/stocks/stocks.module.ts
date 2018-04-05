@@ -16,12 +16,14 @@ import { StockRiskFilterComponent } from './stock-risk-filter/stock-risk-filter.
 import { StockRiskSwitcherComponent } from './stock-risk-switcher/stock-risk-switcher.component';
 import { StockSearchComponent } from './stock-search/stock-search.component';
 import { StocksComponent } from './stocks.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
     BrowserAnimationsModule,
     FormsModule,
+    RouterModule,
 
     CoreModule
   ],

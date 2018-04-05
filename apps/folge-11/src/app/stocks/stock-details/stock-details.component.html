@@ -1,12 +1,1 @@
-<div class="divider"></div>
-<h6>DETAILS</h6>
-<table class="table">
-  <tr>
-    <td>Next Earnings</td>
-    <td>{{ stockQuoteDetails.nextEarnings | date }}</td>
-  </tr>
-  <tr>
-    <td>Last Update</td>
-    <td>{{ stockQuoteDetails.lastUpdateOn | date }}</td>
-  </tr>
-</table>
+{{ stock$ | async | json }}

@@ -10,8 +10,5 @@
   *ngFor="let stock of stockQoutes
           | restrictStocks: riskWhiteList
           | searchSymbol: symbolQuery">
-    <aec-stock-risk-switcher
-      [current]="stock.risk"
-      (choose)="updateRisk(stock, $event)">
-    </aec-stock-risk-switcher>
+    <a class="btn btn-link" [routerLink]="['/stock', stock.symbol]">DETAILS</a>
 </aec-stock-card>

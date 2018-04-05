@@ -20,13 +20,6 @@ export class StocksComponent implements OnInit {
     this._stocks
       .loadSymbolsFromAlphavantage('msft,tsla,aapl,fb')
       .subscribe(stockQuotes => this.stockQoutes = stockQuotes);
-
-    this._stocks
-      .getSingle('asd')
-      .subscribe(
-        res => console.info(res),
-        err => console.warn(err)
-      );
   }
 
   updateRisk(stockQuote: StockQuote, risk: StockQuoteRisk) {
